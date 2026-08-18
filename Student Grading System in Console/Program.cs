@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics.Metrics;
 using System.Text;
 using System.Threading;
 
@@ -95,34 +96,67 @@ class Program
 
             if (Input == 1)
             {
+                Console.Clear();
+                for (int x = 0; x < width; x++)
+                {
+                    Console.SetCursorPosition(x, 0);
+                    Console.Write(HorizontalBar);
+                }
+
+                for (int y = 0; y < height; y++)
+                {
+                    Console.SetCursorPosition(width - 2, y);
+                    Console.Write("||");
+                }
+
+                for (int x = width - 2; x >= 0; x--)
+                {
+                    Console.SetCursorPosition(x, height - 1);
+                    Console.Write(HorizontalBar);
+                }
+
+                for (int y = height - 1; y >= 0; y--)
+                {
+                    Console.SetCursorPosition(0, y);
+                    Console.Write("||");
+                }
+
+
                 while (true)
                 {
-                    Console.WriteLine("\n--- ADD STUDENT ---\n");
+                    Console.SetCursorPosition(50, 2);
+                    Console.WriteLine("--- ADD STUDENT ---");
 
+                    Console.SetCursorPosition(50, 4);
                     Console.Write("Enter Student's LRN: ");
                     Array.Resize(ref LRN, (LRN?.Length ?? 0) + 1);
                     LRN[LRN.Length - 1] = Console.ReadLine();
 
+                    Console.SetCursorPosition(50, 6);
                     Console.Write("Enter Student's Name: ");
                     Array.Resize(ref StudentName, (StudentName?.Length ?? 0) + 1);
                     StudentName[StudentName.Length - 1] = Console.ReadLine();
 
+                    Console.SetCursorPosition(50, 8);
                     Console.Write("Enter Student's Grade Level: ");
                     Array.Resize(ref GradeLevel, (GradeLevel?.Length ?? 0) + 1);
                     int.TryParse(Console.ReadLine(), out int level);
                     GradeLevel[GradeLevel.Length - 1] = level;
 
+                    Console.SetCursorPosition(50, 10);
                     Console.Write("Enter Student's Section: ");
                     Array.Resize(ref Section, (Section?.Length ?? 0) + 1);
                     Section[Section.Length - 1] = Console.ReadLine();
 
+                    Console.SetCursorPosition(50, 12);
                     Console.Write("Enter Student's Adviser: ");
                     Array.Resize(ref Adviser, (Adviser?.Length ?? 0) + 1);
                     Adviser[Adviser.Length - 1] = Console.ReadLine();
 
+                    Console.SetCursorPosition(50, 14);
                     Console.ForegroundColor = ConsoleColor.Green;
                     string Adding_Message_1 = "Adding new student...";
-                    foreach(char Adding_Messages_1 in Adding_Message_1)
+                    foreach (char Adding_Messages_1 in Adding_Message_1)
                     {
                         Console.Write(Adding_Messages_1);
                         Thread.Sleep(60);
@@ -130,6 +164,7 @@ class Program
                     Thread.Sleep(3000);
                     Console.ResetColor();
 
+                    Console.SetCursorPosition(50, 16);
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     string Adding_Message_2 = "Please wait...";
                     foreach (char Adding_Messages_2 in Adding_Message_2)
@@ -140,7 +175,7 @@ class Program
                     Thread.Sleep(2000);
                     Console.ResetColor();
 
-
+                    Console.SetCursorPosition(50, 18);
                     Console.ForegroundColor = ConsoleColor.Green;
                     string Adding_Message_3 = "Success!";
                     foreach (char Adding_Messages_3 in Adding_Message_3)
@@ -149,11 +184,71 @@ class Program
                         Thread.Sleep(60);
                     }
                     Console.ResetColor();
-                    break;
+
+                    Console.SetCursorPosition(50, 20);
+                    Console.WriteLine("1. Add Another Student");
+
+                    Console.SetCursorPosition(50, 22);
+                    Console.WriteLine("2. Back to Main Menu");
+
+                    Console.SetCursorPosition(50, 24);
+                    Console.Write("Enter choice: ");
+
+                    int StudentInput;
+
+                    if (!int.TryParse(Console.ReadLine(), out StudentInput))
+                    {
+                        continue;
+                    }
+
+                    if (StudentInput == 1)
+                    {
+                        Console.Clear();
+                        continue;
+                    }
+                    else if (StudentInput == 2)
+                    {
+                        Console.Clear();
+                        break;
+                    }
+                    else if (StudentInput >= 3)
+                    {
+                        Console.SetCursorPosition(50, 26);
+                        Console.WriteLine("INVALID_OPTION");
+                        return;
+                    }
                 }
             }
             else if (Input == 2)
             {
+                Console.Clear();
+                for (int x = 0; x < width; x++)
+                {
+                    Console.SetCursorPosition(x, 0);
+                    Console.Write(HorizontalBar);
+                }
+
+                for (int y = 0; y < height; y++)
+                {
+                    Console.SetCursorPosition(width - 2, y);
+                    Console.Write("||");
+                }
+
+                for (int x = width - 2; x >= 0; x--)
+                {
+                    Console.SetCursorPosition(x, height - 1);
+                    Console.Write(HorizontalBar);
+                }
+
+                for (int y = height - 1; y >= 0; y--)
+                {
+                    Console.SetCursorPosition(0, y);
+                    Console.Write("||");
+                }
+
+
+
+
 
             }
             else if (Input == 3)
