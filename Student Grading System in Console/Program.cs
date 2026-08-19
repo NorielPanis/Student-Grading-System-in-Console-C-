@@ -37,7 +37,6 @@ class Program
             Console.Write("||");
         }
 
-
         string Titles = " === Student Grading System ===";
         Console.SetCursorPosition(45, 2);
 
@@ -67,6 +66,31 @@ class Program
         int Input = 0;
         Thread.Sleep(1000);
         do {
+
+            for (int x = 0; x < width; x++)
+            {
+                Console.SetCursorPosition(x, 0);
+                Console.Write(HorizontalBar);
+            }
+
+            for (int y = 0; y < height; y++)
+            {
+                Console.SetCursorPosition(width - 2, y);
+                Console.Write("||");
+            }
+
+            for (int x = width - 2; x >= 0; x--)
+            {
+                Console.SetCursorPosition(x, height - 1);
+                Console.Write(HorizontalBar);
+            }
+
+            for (int y = height - 1; y >= 0; y--)
+            {
+                Console.SetCursorPosition(0, y);
+                Console.Write("||");
+            }
+
             Console.SetCursorPosition(49, 7);
             Console.Write("1. Add Student");
             
@@ -96,34 +120,34 @@ class Program
 
             if (Input == 1)
             {
-                Console.Clear();
-                for (int x = 0; x < width; x++)
-                {
-                    Console.SetCursorPosition(x, 0);
-                    Console.Write(HorizontalBar);
-                }
-
-                for (int y = 0; y < height; y++)
-                {
-                    Console.SetCursorPosition(width - 2, y);
-                    Console.Write("||");
-                }
-
-                for (int x = width - 2; x >= 0; x--)
-                {
-                    Console.SetCursorPosition(x, height - 1);
-                    Console.Write(HorizontalBar);
-                }
-
-                for (int y = height - 1; y >= 0; y--)
-                {
-                    Console.SetCursorPosition(0, y);
-                    Console.Write("||");
-                }
-
-
                 while (true)
                 {
+                    Console.Clear();
+
+                    for (int x = 0; x < width; x++)
+                    {
+                        Console.SetCursorPosition(x, 0);
+                        Console.Write(HorizontalBar);
+                    }
+
+                    for (int y = 0; y < height; y++)
+                    {
+                        Console.SetCursorPosition(width - 2, y);
+                        Console.Write("||");
+                    }
+
+                    for (int x = width - 2; x >= 0; x--)
+                    {
+                        Console.SetCursorPosition(x, height - 1);
+                        Console.Write(HorizontalBar);
+                    }
+
+                    for (int y = height - 1; y >= 0; y--)
+                    {
+                        Console.SetCursorPosition(0, y);
+                        Console.Write("||");
+                    }
+
                     Console.SetCursorPosition(50, 2);
                     Console.WriteLine("--- ADD STUDENT ---");
 
